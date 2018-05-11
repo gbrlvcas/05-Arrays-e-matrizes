@@ -69,6 +69,8 @@ public class Exercicio10 {
 		
 		// 7) Variaveis [Exclusão - Categoria]
 		String mnexcCategoria;
+		int excluirCategoria;
+		int opcaoClientes;
 		boolean saircatExclusao = true;
 		
 		
@@ -332,7 +334,7 @@ public class Exercicio10 {
 						}
 						
 					}
-						}
+						
 				}while(sairCategoria == false);
 				
 				}
@@ -401,8 +403,26 @@ public class Exercicio10 {
 				
 				do {
 					
-					
-					
+					//Menu de categorias
+					mnexcCategoria = "**** Menu de exclusão de categoria ****\n\n";
+						for (int menu = 0 ; menu < 5 ; menu++){
+							
+							mnexcCategoria+= menu+")"+categoria[menu];
+							mnexcCategoria+="\n";
+							
+						}
+						
+						excluirCategoria = Integer.parseInt(JOptionPane.showInputDialog(mnexcCategoria));
+							for(int analisa = 0; analisa < 5 ; analisa++){
+								if(!armazenaCategoria[analisa].equals("")){
+									JOptionPane.showMessageDialog(null, "Você ainda não pode excluir essa categoria\npois ela possui clientes ");
+										
+									
+								}else{
+									categoria[analisa] = "";
+								}
+							}
+						
 				}while(saircatExclusao == false);
 				
 				
@@ -424,4 +444,4 @@ public class Exercicio10 {
 		
 	}
 
-}
+}		
